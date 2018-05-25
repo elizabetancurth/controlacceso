@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(array('prefix' => 'api'), function()
+{
+    Route::get('usuarios', 'api\UsuarioController@listAll');
+    Route::get('usuarios/{id}', 'api\UsuarioController@listOne');
+    
+});
