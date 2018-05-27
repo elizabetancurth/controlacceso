@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'nombres' => 'required|string|max:255',
             'apellidos' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:4|max:4|confirmed',
         ]);
     }
 
@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'apellidos' => $data['apellidos'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'estado' => 'Activo',
         ]);
     }
 }

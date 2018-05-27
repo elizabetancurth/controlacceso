@@ -23,5 +23,6 @@ Route::group(array('prefix' => 'api'), function()
 {
     Route::get('usuarios', 'api\UsuarioController@listAll');
     Route::get('usuarios/{id}', 'api\UsuarioController@listOne');
+    Route::post('usuarios', 'api\UsuarioController@create');
     
 });

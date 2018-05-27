@@ -17,7 +17,7 @@ class ControlAccesos extends Migration
             $table->increments('id');
             $table->enum('resultado', ['Exitoso', 'Contraseña incorrecta', 'Usuario inactivo o no existe' ]);
             $table->string('ruta_imagen');
-            $table->enum('tipo_acceso', ['Ingreso', 'Salida']);
+            $table->enum('tipo_acceso', ['Entrada', 'Salida']);
             $table->integer('user_id_creacion')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
